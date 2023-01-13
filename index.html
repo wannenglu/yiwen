@@ -248,6 +248,7 @@
         },
         created() {
           this.getjson();
+          this.initDate();
         },
         methods: {
           getjson: function () {
@@ -270,6 +271,20 @@
               return item.number === fkyynumber_data;
             });
             this.form.fkyyvalue = obj.name;
+          },
+          getCurrentData() {
+            return (
+              new Date().getFullYear() +
+              "年" +
+              (new Date().getMonth() + 1) +
+              "月" +
+              new Date().getDate() +
+              "日"
+            );
+          },
+          initDate() {
+            console.log(this.getCurrentData());
+            this.form.fktime = this.getCurrentData();
           },
           onSubmit: function () {
             console.log(this.form);

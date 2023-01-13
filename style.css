@@ -1,0 +1,105 @@
+body,
+div,
+p,
+h1,
+h2,
+h3,
+h4,
+ul,
+li,
+dl,
+dt,
+dd,
+ol,
+form,
+table,
+tr,
+td,
+span,
+label,
+input,
+select,
+option,
+a,
+img,
+i,
+em,
+strong,
+b {
+  margin: 0;
+  padding: 0;
+}
+li {
+  list-style: none;
+}
+img {
+  border: 0 none;
+  vertical-align: top;
+}
+a {
+  text-decoration: none;
+  color: #fff;
+}
+a:hover {
+  color: #fff;
+}
+i {
+  font-style: normal;
+}
+html {
+  /* rem单位永远以html做参考缩放；百分比和em单位以父元素做参考 */
+  font-size: 625%; /* 16*6.25=100px */
+}
+body {
+  font-family: "微软雅黑";
+  color: #333;
+  max-width: 640px;
+  min-width: 320px;
+  margin: 0 auto;
+  font-size: 0.24rem; /* body中默认使用最多的字体大小 */
+  background: #ffffff;
+  padding: 0.2rem;
+}
+.disflex {
+  display: flex;
+}
+.clearfix {
+  *zoom: 1;
+}
+.clearfix:after {
+  content: ".";
+  height: 0;
+  clear: both;
+  visibility: hidden;
+  display: block;
+}
+
+.header {
+  /* padding: 0.2rem; */
+}
+.header h2 {
+  font-family: "Helvetica Neue", Helvetica, "PingFang SC", "Hiragino Sans GB",
+    "Microsoft YaHei", "微软雅黑", Arial, sans-serif;
+  text-align: center;
+}
+.formdiv {
+  margin-top: 0.2rem;
+}
+.demo-input-suffix {
+  margin-bottom: 20px;
+}
+.formp {
+  line-height: 24px;
+  margin-bottom: 10px;
+}
+.wbmain {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 20px;
+}
+.fkwbdiv {
+  width: 49%;
+}
+.fkwbdiv .copy1 {
+  margin-bottom: 10px;
+}

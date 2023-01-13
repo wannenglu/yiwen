@@ -122,6 +122,7 @@
                   filterable
                   placeholder="请选择反馈人信息"
                   clearable
+                  @change="changeOption2"
                 >
                   <el-option
                     v-for="item in form.userdata"
@@ -264,13 +265,22 @@
             console.log(this.form.userdata);
           },
           changeOption: function () {
-            console.log(this.form.fkyynumber);
+            // console.log(this.form.fkyynumber);
             let fkyynumber_data = this.form.fkyynumber;
             let obj = {};
             obj = this.form.userdata.find((item) => {
               return item.number === fkyynumber_data;
             });
             this.form.fkyyvalue = obj.name;
+          },
+          changeOption2: function () {
+            // console.log(this.form.fkyynumber);
+            let fkyyvalue_data = this.form.fkyyvalue;
+            let obj = {};
+            obj = this.form.userdata.find((item) => {
+              return item.name === fkyyvalue_data;
+            });
+            this.form.fkyynumber = obj.number;
           },
           getCurrentData() {
             return (
@@ -309,7 +319,7 @@
               "\r\n" +
               "其余YY号" +
               "\r\n" +
-              form.yynumber +
+              form.otheryynumber +
               "\r\n" +
               "疑似违规频道号" +
               "\r\n" +
@@ -342,7 +352,7 @@
               "\r\n" +
               "其余YY号" +
               "\r\n" +
-              form.yynumber +
+              form.otheryynumber +
               "\r\n" +
               "疑似违规频道号" +
               "\r\n" +

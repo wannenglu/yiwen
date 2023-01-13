@@ -257,12 +257,12 @@
               .get("user.json")
               .then((response) => {
                 this.form.userdata = response.data;
-                console.log(this.form.userdata);
+                // console.log(this.form.userdata);
               })
               .catch(function (error) {
                 console.log(error);
               });
-            console.log(this.form.userdata);
+            // console.log(this.form.userdata);
           },
           changeOption: function () {
             // console.log(this.form.fkyynumber);
@@ -293,11 +293,11 @@
             );
           },
           initDate() {
-            console.log(this.getCurrentData());
+            // console.log(this.getCurrentData());
             this.form.fktime = this.getCurrentData();
           },
           onSubmit: function () {
-            console.log(this.form);
+            // console.log(this.form);
             let form = this.form;
             if (this.form.yynumber == "") {
               form.yynumber = "无";

@@ -5,8 +5,9 @@
   <meta charset="UTF-8" />
   <meta name="viewport"
     content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0" />
+  <meta http-equiv="Access-Control-Allow-Origin" content="*" />
   <link type="text/css" rel="stylesheet" href="style.css" />
-  
+
   <script src="script.js"></script>
   <!-- 引入样式 -->
   <link rel="stylesheet" href="https://unpkg.com/element-ui/lib/theme-chalk/index.css" />
@@ -34,8 +35,10 @@
           <div class="formp">疑似违规YY号：</div>
           <template>
             <div class="block">
-              <el-input placeholder="请输入疑似违规YY号" v-model="form.yynumber" clearable @blur="searchpd">
+              <el-input placeholder="请输入疑似违规YY号" v-model="form.yynumber" clearable>
               </el-input>
+              <!-- <el-input placeholder="请输入疑似违规YY号" v-model="form.yynumber" clearable @blur="searchpd">
+              </el-input> -->
             </div>
           </template>
         </div>
@@ -192,18 +195,18 @@
             });
           // console.log(this.form.userdata);
         },
-        searchpd: function () {
-          axios
-            .get("https://mobi.yy.com/u/h5/profile/"+this.form.yynumber)
-            .then((response) => {
-              let yyuserinfo = response.data
-              this.form.pdnumber = yyuserinfo.wiki.roomId;
-              // console.log(response.data);
-            })
-            .catch(function (error) {
-              console.log(error);
-            });
-        },
+        // searchpd: function () {
+        //   axios
+        //     .get("https://mobi.yy.com/u/h5/profile/"+this.form.yynumber)
+        //     .then((response) => {
+        //       let yyuserinfo = response.data
+        //       this.form.pdnumber = yyuserinfo.wiki.roomId;
+        //       // console.log(response.data);
+        //     })
+        //     .catch(function (error) {
+        //       console.log(error);
+        //     });
+        // },
         changeOption: function () {
           // console.log(this.form.fkyynumber);
           let fkyynumber_data = this.form.fkyynumber;
